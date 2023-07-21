@@ -21,7 +21,7 @@ cursor.execute("CREATE TABLE Authors (AuthorID INT PRIMARY KEY, First_Name VARCH
 cursor.execute("CREATE TABLE Publishers (PublisherID INT PRIMARY KEY, Publisher_Name VARCHAR(50))")
 
 # Create Titles table with a foreign key constraint on PublisherID
-cursor.execute("CREATE TABLE Titles (ISBN VARCHAR(20) PRIMARY KEY, Title VARCHAR(50), PublisherID INT, Image_file LONGBLOB, Price INT, FOREIGN KEY (PublisherID) REFERENCES Publishers(PublisherID))")
+cursor.execute("CREATE TABLE Titles (ISBN VARCHAR(20) PRIMARY KEY, Title VARCHAR(50), PublisherID INT, Image_file LONGBLOB, Price INT, FOREIGN KEY (PublisherID) REFERENCES Publishers(PublisherID), Edition_Number Int)")
 
 # Create AuthorISBN table with foreign key constraints on AuthorID and ISBN
 cursor.execute("CREATE TABLE AuthorISBN (AuthorID INT, ISBN VARCHAR(20), FOREIGN KEY (AuthorID) REFERENCES Authors(AuthorID), FOREIGN KEY (ISBN) REFERENCES Titles(ISBN))")
@@ -31,8 +31,8 @@ cursor.execute("INSERT INTO Publishers (PublisherID, Publisher_Name) VALUES (190
 cursor.execute("INSERT INTO Publishers (PublisherID, Publisher_Name) VALUES (0102, 'Multi-Tech Publisher')")
 
 # Insert data into Titles table
-cursor.execute("INSERT INTO Titles (ISBN, Title, PublisherID, Image_file, Price) VALUES ('1234567890123', 'My Health', 1902, NULL, 150)")
-cursor.execute("INSERT INTO Titles (ISBN, Title, PublisherID, Image_file, Price) VALUES ('9876543210987', 'Healthy Life Style', 102, NULL, 200)")
+cursor.execute("INSERT INTO Titles (ISBN, Title, PublisherID, Image_file, Price, Edition_Number) VALUES ('1234567890123', 'My Health', 1902, NULL, 150, 1)")
+cursor.execute("INSERT INTO Titles (ISBN, Title, PublisherID, Image_file, Price, Edition_Number) VALUES ('9876543210987', 'Healthy Life Style', 102, NULL, 200, 2)")
 
 # Insert data into Authors table
 cursor.execute("INSERT INTO Authors (AuthorID, First_Name, Last_Name) VALUES (1, 'Rangdal', 'Pavansai')")
