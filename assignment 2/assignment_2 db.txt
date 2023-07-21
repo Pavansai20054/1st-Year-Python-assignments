@@ -1,0 +1,6 @@
+Quires in MySQL command prompt
+
+create database Titles # output will be query ok 1 row effected
+use Titles # it will open the connection in Titles database
+# it will create the table in Titles database.
+create table Authors (AuthorID int Primary key, First_Name varchar(50), Last_Name varchar(50));
