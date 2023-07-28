@@ -64,7 +64,7 @@ x = 1
 
 def auto_image():
     global x
-    if x == 8:
+    if x == 7:
         x = 1
     if x == 1:
         image_label.config(image=image1)
@@ -211,15 +211,16 @@ def close ():
 # defining the admin interface
 def admin_information():
     root.withdraw()             # Hide the current window
-    ars_admin_window = Toplevel(root)
+    ars_admin_window = Toplevel()
+    ars_admin_window.state ('zoomed')
+
 
 # class for admin information
     class AdminInformation:
-        def __init__(self, win):
-            self.win = win
-            self.win.state('zoomed')
-            self.win.resizable(height=False, width=False)
-            #self.win.title('Administration')
+        def __init__(self, window):
+            self.window = window
+            self.window.state('zoomed')
+            self.window.resizable(height=False, width=False)
 
             # Global variable to store the image
             self.photo_image = None
@@ -250,11 +251,9 @@ def admin_information():
                 messagebox.showerror("Invalid", "Please enter a valid password.")
 
         def admin(self):
-            root = Toplevel(self.top)  # Use self.top as the master window
-            root.title("Administration")
-            root.state('zoomed')
-            label = Label(root, text = "Welcome to Administration Section", font = ("Arial", 30)).pack()
-            root.mainloop()
+            self.window.title("Administration")
+            self.window.state('zoomed')
+            label = Label(self.window, text = "Welcome to Administration Section", font = ("Arial", 30)).pack()
 
         def main_top(self):
             self.top = Toplevel()
@@ -333,16 +332,9 @@ def admin_information():
             btn = Button(frame, text="Verify", fg="black", bg="green", command=answer_check, font=("Times New Roman", 16), bd=5, relief=RAISED)
             btn.grid(row=2, column=2)
 
-            self.top.mainloop()
 
-    def admin_information():
-        root.withdraw()  # Hide the current window
-        ars_admin_window = Toplevel(root)
-        admin_info = AdminInformation(ars_admin_window)
-        admin_info.main_top()
-
-    #ars_admin_window = Tk()
-    admin_information()
+    admin_info = AdminInformation(ars_admin_window)
+    admin_info.main_top()
     ars_admin_window.mainloop()
 
 
