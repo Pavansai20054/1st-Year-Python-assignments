@@ -10,8 +10,8 @@ from tkcalendar import *
 # connecting the database with the program
 connect = mysql.connector.connect (
                                    host = 'localhost',
-                                   username = 'root',
-                                   password = 'mysql'
+                                   user = 'root',
+                                   password = ''
                                   )
 
 cursor = connect.cursor(buffered = True)
@@ -60,31 +60,31 @@ frame.place(x = 750, y = 100, width = 610, height = 510)
 
 # Load the images
 try:
-    image1 = Image.open("A:\\Airway Reservation\\Images\\1.jpg")
+    image1 = Image.open("A:\\All files\\My Projects\\1st-Year-Python-assignments\\Airline Reservation system\\Images\\1.jpg")
     image1 = image1.resize((610, 510), Image.LANCZOS)
     image1 = ImageTk.PhotoImage(image1)
 
-    image2 = Image.open("A:\\Airway Reservation\\Images\\2.jpg")
+    image2 = Image.open("A:\\All files\\My Projects\\1st-Year-Python-assignments\\Airline Reservation system\\Images\\2.jpg")
     image2 = image2.resize((610, 510), Image.LANCZOS)
     image2 = ImageTk.PhotoImage(image2)
 
-    image3 = Image.open("A:\\Airway Reservation\\Images\\3.jpg")
+    image3 = Image.open("A:\\All files\\My Projects\\1st-Year-Python-assignments\\Airline Reservation system\\Images\\3.jpg")
     image3 = image3.resize((610, 510), Image.LANCZOS)
     image3 = ImageTk.PhotoImage(image3)
 
-    image4 = Image.open("A:\\Airway Reservation\\Images\\4.jpg")
+    image4 = Image.open("A:\\All files\\My Projects\\1st-Year-Python-assignments\\Airline Reservation system\\Images\\4.jpg")
     image4 = image4.resize((610, 510), Image.LANCZOS)
     image4 = ImageTk.PhotoImage(image4)
 
-    image5 = Image.open("A:\\Airway Reservation\\Images\\5.jpg")
+    image5 = Image.open("A:\\All files\\My Projects\\1st-Year-Python-assignments\\Airline Reservation system\\Images\\5.jpg")
     image5 = image5.resize((610, 510), Image.LANCZOS)
     image5 = ImageTk.PhotoImage(image5)
 
-    image6 = Image.open("A:\\Airway Reservation\\Images\\6.jpg")
+    image6 = Image.open("A:\\All files\\My Projects\\1st-Year-Python-assignments\\Airline Reservation system\\Images\\6.jpg")
     image6 = image6.resize((610, 510), Image.LANCZOS)
     image6 = ImageTk.PhotoImage(image6)
 
-    image7 = Image.open("A:\\Airway Reservation\\Images\\7.jpg")
+    image7 = Image.open("A:\\All files\\My Projects\\1st-Year-Python-assignments\\Airline Reservation system\\Images\\7.jpg")
     image7 = image7.resize((610, 510), Image.LANCZOS)
     image7 = ImageTk.PhotoImage(image7)
 except Exception as e:
@@ -136,7 +136,7 @@ def user_information():
             l_title.place(x = 0, y = 0, width = 1450, height = 70)
 
             # logo
-            img_logo = Image.open("A:\\Airway Reservation\\Images\\logo.jpg")
+            img_logo = Image.open("A:\\All files\\My Projects\\1st-Year-Python-assignments\\Airline Reservation system\\Images\\logo.jpg")
             img_logo = img_logo.resize((60, 60), Image.LANCZOS)
             self.photo_logo = ImageTk.PhotoImage(img_logo)
 
@@ -148,7 +148,7 @@ def user_information():
             image_frame.place(x = 600, y = 70, width = 770, height = 680)
             
             # image 1
-            img1 = Image.open("A:\\Airway Reservation\\Images\\p1.jpg")
+            img1 = Image.open("A:\\All files\\My Projects\\1st-Year-Python-assignments\\Airline Reservation system\\Images\\p1.jpg")
             img1 = img1.resize((770, 650), Image.LANCZOS)
             self.photo_image1 = ImageTk.PhotoImage(img1)
 
@@ -330,7 +330,7 @@ def admin_information():
             self.window.config(bg="black")
 
             # Load the image and resize it
-            image = Image.open("A:\\Airway Reservation\\Images\\background.jpg")
+            image = Image.open("A:\\All files\\My Projects\\1st-Year-Python-assignments\\Airline Reservation system\\Images\\background.jpg")
             resized_image = image.resize((1360, 740), Image.LANCZOS)
             self.photo_image = ImageTk.PhotoImage(resized_image)  # Convert to PhotoImage
             l = Label(self.window, image = self.photo_image)
@@ -412,19 +412,19 @@ def admin_information():
 
 
 # Create a buttons to open the choose window
-pic = Image.open("A:\\Airway Reservation\\Images\\admin.jpg")
+pic = Image.open("A:\\All files\\My Projects\\1st-Year-Python-assignments\\Airline Reservation system\\Images\\admin.jpg")
 pic = pic.resize((300, 250), Image.LANCZOS)
 tk_image = ImageTk.PhotoImage(pic)
 btn2 = Button(root, image = tk_image, command = admin_information, bd = 10,bg = "blue", relief= RAISED)
 btn2.place(x = 60, y = 250)
 
-pic1 = Image.open("A:\\Airway Reservation\\Images\\user.jpg")
+pic1 = Image.open("A:\\All files\\My Projects\\1st-Year-Python-assignments\\Airline Reservation system\\Images\\user.jpg")
 pic1 = pic1.resize((300, 250), Image.LANCZOS)
 tk_image1 = ImageTk.PhotoImage(pic1)
 btn3 = Button(root, image = tk_image1, command = user_information, bd = 10,bg = "green", relief=RAISED)
 btn3.place(x = 400, y = 250)
 
-pic2 = Image.open("A:\\Airway Reservation\\Images\\close.jpg")
+pic2 = Image.open("A:\\All files\\My Projects\\1st-Year-Python-assignments\\Airline Reservation system\\Images\\close.jpg")
 pic2 = pic2.resize((250, 100), Image.LANCZOS)
 tk_image2 = ImageTk.PhotoImage(pic2)
 btn4 = Button(root, image = tk_image2, command = close, bg = "red", relief = RAISED)
